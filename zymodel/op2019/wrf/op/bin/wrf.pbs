@@ -1,0 +1,13 @@
+#!/bin/bash 
+#PBS -N ZYMsys 
+#PBS -l nodes=15:ppn=32
+#PBS -j oe
+#PBS -e ./$PBS_JOBID.e
+#PBS -o ./$PBS_JOBID.o
+#PBS -q henanqx
+source /home/henanqx/.bashrc
+source /home/henanqx/MDT/Guoyk/op2019/env/op2019_latest
+ulimit -s unlimited
+cd $PBS_O_WORKDIR
+cat $PBS_NODEFILE > /home/henanqx/MDT/Guoyk/op2019/nodefile.txt
+mpirun -machinefile /home/henanqx/MDT/Guoyk/op2019/nodefile.txt -n 480 ./wrf.exe >& ./wrf.log

@@ -1,0 +1,33 @@
+# QUIT Verbose ENV, mostly need source from the BASH ENV
+source /opt/intel/composer_xe_2015/bin/compilervars.csh intel64
+source /opt/intel/mkl/bin/mklvars.csh intel64
+source /opt/intel/impi/5.0.2.044/intel64/bin/mpivars.csh
+###########NETCDF (This netcdf is installed for TEST, For Personal env USE )
+setenv NETCDF '/home/henanqx/apps/Tools/netcdf/version4.1.2/intel_15.0.1'
+setenv PATH '$PATH:$NETCDF/bin:$NETCDF/include:$NETCDF/lib'
+setenv MANPATH '$MANPATH:$NETCDF/share/man'
+setenv LD_LIBRARY_PATH '$LD_LIBRARY_PATH:$NETCDF/lib/'
+##########grads# (OP TEST)
+setenv PATH '$PATH:/public/home/henanqx/Guoyk/pap2/lstAssimi/OSSE/OBS/GLDAS/proc/tool/grads2.1/bin'
+setenv GADDIR '/public/home/henanqx/Guoyk/pap2/lstAssimi/OSSE/OBS/GLDAS/proc/tool/grads2.1/dat'
+setenv GASCRP '/public/home/henanqx/Guoyk/pap2/lstAssimi/OSSE/OBS/GLDAS/proc/tool/grads2.1/libs'
+##########JASPER
+setenv JASPERLIB '/public/home/henanqx/apps/libs/basic/lib' 
+setenv JASPERINC '/public/home/henanqx/apps/libs/basic/include'  
+setenv LD_LIBRARY_PATH '$LD_LIBRARY_PATH:$JASPER/lib'
+
+# WRF3,8 and older version, (OP)
+setenv WRF_EM_CORE '1'
+setenv WRFIO_NCD_LARGE_FILE_SUPPORT '1' 
+#ulimit -s unlimited
+setenv LD_LIBRARY_PATH '/public/home/henanqx/apps/libs/basic/lib:/public/home/henanqx/apps/libs/g2clib-1.6.0/lib:$LD_LIBRARY_PATH'
+# several Tools
+#alias cnvgrib=/home/henanqx/apps/Tools/cnvgrib-3.1.0/cnvgrib
+#alias cdo=/home/henanqx/apps/Tools/cdo/1.9.0/bin/cdo
+#alias vim="vim -u ~/.vimrc"
+#### Very Important Language ENV
+setenv LANG ""
+
+setenv PATH '/public/software/Matlab-R2017a/bin:/usr/java/jdk1.8.0_101/bin:/usr/java/jdk1.8.0_101/jre/bin:/opt/tsce/slurm/bin:/opt/tsce/slurm/sbin/:/opt/tsce/maui/sbin:/opt/tsce/maui/bin:/opt/tsce/torque6/bin:/opt/tsce/torque6/sbin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin'
+
+setenv LD_LIBRARY_PATH '$LD_LIBRARY_PATH:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:/public/home/henanqx/apps/libs/basic/lib:/home/henanqx/MDT/Guoyk/home/Program/wrfversion4/4.0/libs/intel_15.0.3/basic/lib:/opt/intel/composer_xe_2015.1.133/compiler/lib/intel64'

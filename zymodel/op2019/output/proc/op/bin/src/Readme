@@ -1,0 +1,16 @@
+2019.8.12
+;#----------------- Benchmark scripts for plotting at an given time
+;#-----------------              Under ONE DIR 
+
+ rain 3h 6h 12 24h interval rain : shaded, need diff between 2 files
+;---- will use pcpsum and plot in one file
+ rain 03h interval and total accum rain : shaded, need 1 files
+ 2mT                              : shaded
+ 10m Wind Vector (contour) and windspeed (shaded)   : composite
+ radar ref                        : shaded
+ 24h T2 max temperature           : shaded
+ slp (contour) and 850hpa wind speed (shaded) : composite
+ 
+ vis                              : shaded
+
+     

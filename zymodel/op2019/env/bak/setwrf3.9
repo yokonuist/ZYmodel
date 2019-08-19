@@ -1,0 +1,57 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+### intel
+source /opt/intel/composer_xe_2015/bin/compilervars.sh intel64
+#source /opt/intel/mkl/bin/mklvars.sh intel64
+source /opt/intel/impi/5.0.2.044/intel64/bin/mpivars.sh
+###########NETCDF (This netcdf is installed for TEST, For Personal env USE )
+export NETCDF=/home/henanqx/apps/Tools/netcdf/version4.1.2/intel_15.0.1
+export PATH=$PATH:$NETCDF/bin:$NETCDF/include:$NETCDF/lib
+export MANPATH=$MANPATH:$NETCDF/share/man
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$NETCDF/lib/
+##########grads# (OP TEST)
+export PATH=$PATH:/public/home/henanqx/Guoyk/pap2/lstAssimi/OSSE/OBS/GLDAS/proc/tool/grads2.1/bin
+export GADDIR=/public/home/henanqx/Guoyk/pap2/lstAssimi/OSSE/OBS/GLDAS/proc/tool/grads2.1/dat
+export GASCRP=/public/home/henanqx/Guoyk/pap2/lstAssimi/OSSE/OBS/GLDAS/proc/tool/grads2.1/libs
+##########ncl#
+export NCARG_ROOT=/home/henanqx/MDT/Guoyk/home/Program/wrfversion3/3.9/test/op/bin/NCL
+export PATH=$NCARG_ROOT/bin:$NCARG_ROOT/include:$NCARG_ROOT/lib:$PATH
+##########JASPER
+export JASPERLIB=/public/home/henanqx/apps/libs/basic/lib 
+export JASPERINC=/public/home/henanqx/apps/libs/basic/include  
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JASPER/lib
+
+# WRF3.8 and older version, (OP)
+export WRF_EM_CORE=1
+export WRFIO_NCD_LARGE_FILE_SUPPORT=1 
+export WRFIO_NCD_NO_LARGE_FILE_SUPPORT=0
+export WRF_DIR=/home/henanqx/MDT/Guoyk/home/Program/wrfversion3/3.9/WRFV3
+export WRFPLUS_DIR=/home/henanqx/MDT/Guoyk/home/Program/wrfversion3/3.9/WRFPLUSV3
+ulimit -s unlimited
+export LD_LIBRARY_PATH=/public/home/henanqx/apps/libs/basic/lib:/public/home/henanqx/apps/libs/g2clib-1.6.0/lib:$LD_LIBRARY_PATH
+# several Tools
+#alias cnvgrib=/home/henanqx/apps/Tools/cnvgrib-3.1.0/cnvgrib
+#alias cdo=/home/henanqx/apps/Tools/cdo/1.9.0/bin/cdo
+#alias vim="vim -u ~/.vimrc"
+#### Very Important Language ENV
+export LANG=""
+
+
+############################################################
+#####      Please Do not Change  Below    ##########
+############################################################
+if [ "$SSH_TTY" ]
+then
+        echo Welcome, a resposible user as ID: henanqx
+        echo This note is Edited by a common user at 2019.7.21
+        echo Important  NOTE : SET WRF 3.9\ 4dvar with intel 15.0.1
+        echo 0.  This compiler is sys installed package!
+        
+fi

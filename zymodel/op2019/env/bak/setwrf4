@@ -1,0 +1,76 @@
+# This is my test env
+#unset FCFLAGS
+#unset LDFLAGS
+#unset CPPFLAGS
+#unset HDF5
+#unset JASPER
+#unset JASPERINC
+#unset JASPERLIB
+#unset NETCDF
+#unset MANPATH
+#unset ZLIB
+#unset NCARG_ROOT
+#unset LAPACK_PATH
+#unset RIP_ROOT
+#unset WRFIO_NCD_LARGE_FILE_SUPPORT
+#unset PYTHONPATH
+#unset lhsrc
+#unset conda
+#unset FC
+#unset CC
+#unset IPPROOT
+
+#unset GDBSERVER_MIC
+#unset LIBRARY_PATH
+#unset MIC_LD_LIBRARY_PATH
+#unset ECFLOW
+#unset PGI
+#unset NLSPATH
+#unset CPATH
+#unset MIC_LIBRARY_PATH
+#unset LD_LIBRARY_PATH
+#unset TBBROOT
+#unset I_MPI_ROOT
+#unset INTEL_PYTHONHOME
+#unset MPM_LAUNCHER
+#unset WRF_EM_CORE
+
+export inteldir=/home/henanqx/MDT/Guoyk/home/Program/wrfversion4/4.0/soft/intel
+source $inteldir/composer_xe_2015.3.187/bin/compilervars.sh intel64
+source $inteldir/impi/5.0.3.048/bin64/mpivars.sh intel64
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$inteldir/lib:/impi/5.0.3.048/intel64/lib:/opt/intel/composer_xe_2015.1.133/compiler/lib/intel64:/usr/lib:/usr/lib64
+export PATH=$PATH:$inteldir/bin:$inteldir/lib:/impi/5.0.3.048/intel64/lib
+
+export FC=ifort
+export CC=icc
+export CXX=icpc
+
+export JASPER=/home/henanqx/MDT/Guoyk/home/Program/wrfversion4/4.0/libs/intel_15.0.3/basic
+export JASPERLIB=$JASPER/lib
+export JASPERINC=$JASPER/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JASPERLIB
+export PATH=$PATH:$JASPER/bin:$JASPER/lib:$JASPER/include
+
+export NETCDF=/home/henanqx/MDT/Guoyk/home/Program/wrfversion4/4.0/libs/intel_15.0.3/netcdf
+export MANPATH=$MANPATH:$NETCDF/share/man
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$NETCDF/lib
+export PATH=$PATH:$NETCDF/bin:$NETCDF/lib:$NETCDF/include
+
+export WRFIO_NCD_NO_LARGE_FILE_SUPPORT=1
+export WRF_DIR=/home/henanqx/MDT/Guoyk/home/Program/wrfversion4/WRF
+export WRFPLUS_DIR=/home/henanqx/MDT/Guoyk/home/Program/wrfversion4/WRFPLUS
+
+if [ "$SSH_TTY" ]
+then
+        echo Welcome, a resposible user using setwrf env
+        echo This note is Edited by a common user at 2019.7.21
+        echo Important  NOTE : How to use mpirun, mpif90, mpirun etc.
+        echo 1.  Locate mpirun is not ok, please use which mpirun to find current run env
+        echo 2.  And you will find: /home/henanqx/MDT/Guoyk/home/Program/wrfversion4/4.0/soft/intel/impi/5.0.3.048/intel64/bin/mpirun
+        echo 3.  And use this: /home/henanqx/MDT/Guoyk/home/Program/wrfversion4/4.0/soft/intel/impi/5.0.3.048/intel64/bin/mpirun -np 10 ./real.exe
+        echo 4.  Mpirun is not compatable with gnu4.8 sampler, thus, damper compile is ok 
+        echo 5.  mpirun is ok if only you source setwrf4 first. 2019.7.23
+
+fi
+

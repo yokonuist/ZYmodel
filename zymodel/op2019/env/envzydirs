@@ -1,0 +1,33 @@
+setenv henanldir /home/henanqx/MDT/Guoyk/op2019
+setenv scriptdir $henanldir/scripts
+setenv wpsdir $henanldir/wps
+setenv wpsworkdir $wpsdir/op
+setenv wrfdir $henanldir/wrf
+setenv wrfworkdir $wrfdir/op
+setenv dacdir $henanldir/da
+setenv dacworkdir $dacdir/op
+setenv outputdir $henanldir/output
+setenv outputworkdir $outputdir/proc/op
+
+setenv rcdir     $outputdir/rc
+setenv ctlrcdir  $rcdir/ctl
+setenv darcdir   $rcdir/da
+setenv emercdir  $rcdir/eme
+
+setenv fcdir     $outputdir/fc
+setenv ctlfcdir  $fcdir/ctl
+setenv dafcdir   $fcdir/da
+setenv emefcdir  $fcdir/eme
+
+setenv diagdir   $outputdir/diag
+setenv figdir    $diagdir/fig
+setenv ctlfigdir $figdir/ctl
+setenv dafigdir  $figdir/da
+setenv emefigdir $figdir/eme
+
+setenv m4dir    $diagdir/micaps4
+setenv ctlm4dir $m4dir/ctl
+setenv dam4dir  $m4dir/da
+setenv emem4dir $m4dir/eme
+
+setenv logdir    $outputdir/log
